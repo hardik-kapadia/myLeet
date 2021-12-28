@@ -11,21 +11,15 @@
 class Solution {
     public ListNode middleNode(ListNode head) {
         
-        ListNode temp = head;
         ListNode t = head;
 
-        boolean move = false;
-
-        while (temp != null) {
-
-            temp = temp.next;
-
-            if(move)
+        boolean move = true;
+        
+        for(ListNode temp = head;temp !=null;temp = temp.next)
+            if(move = !move)
                 t = t.next;
 
-            move = !move;
-            
-        }
+        
         return t;
         
     }
