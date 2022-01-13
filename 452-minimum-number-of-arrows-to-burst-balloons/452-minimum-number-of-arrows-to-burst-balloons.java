@@ -1,38 +1,25 @@
 class Solution {
     public int findMinArrowShots(int[][] points) {
-        
         if (points.length == 1)
             return 1;
         
-        Arrays.sort(points, (int[] p, int[] q) -> p[0] - q[0]);
-        
-        List<int[]> xWindows = new ArrayList<>();
+                if (points.length == 2)
+            return (points[0][0] <= points[1][1] && points[0][1] >= points[1][0]) ? 1 : 2;
 
-        for (int i = 0; i < points.length; i++) {
+        Arrays.sort(points, (int[] p, int[] q) -> p[1] - q[1]);
 
-            int[] balloon = points[i];
-            boolean fits = false;
+        int arrows = 1;
 
-            for (int j = 0; j < xWindows.size(); j++) {
+        int currentArrow = points[0][1];
 
-                int[] window = xWindows.get(j);
-
-                if (balloon[0] <= window[1] && balloon[1] >= window[0]) {
-
-                    window[0] = Math.max(window[0], balloon[0]);
-                    window[1] = Math.min(window[1], balloon[1]);
-
-                    fits = true;
-                    break;
-
-                }
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][0] > currentArrow) {
+                currentArrow = points[i][1];
+                arrows++;
             }
-
-            if (!fits)
-                xWindows.add(new int[] { balloon[0], balloon[1] });
 
         }
 
-        return xWindows.size();
+        return arrows;
     }
 }
