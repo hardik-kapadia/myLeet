@@ -10,7 +10,6 @@ class Solution {
             return false;
 
         Map<Character, String> map = new HashMap<>();
-        Set<String> assigned = new HashSet<>();
 
         for (int i = 0; i < chars.length; i++) {
 
@@ -22,12 +21,10 @@ class Solution {
             if (map.containsKey(c)) {
                 if (!map.get(c).equals(word))
                     return false;
-            } else if (assigned.contains(word)) {
+            } else if (map.containsValue(word))
                 return false;
-            } else {
+            else
                 map.put(c, word);
-                assigned.add(word);
-            }
 
         }
 
