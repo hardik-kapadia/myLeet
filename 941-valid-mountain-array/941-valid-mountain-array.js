@@ -4,7 +4,7 @@
  */
 var validMountainArray = function(arr) {
     
-    if (arr.length == 1)
+    if (arr.length < 3)
         return false;
 
     let i;
