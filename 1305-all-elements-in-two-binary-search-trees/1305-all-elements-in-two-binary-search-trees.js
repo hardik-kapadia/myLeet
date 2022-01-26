@@ -24,8 +24,11 @@ var getAllElements = function(root1, root2) {
 
         let elements = [];
 
+        if(base.left)
         elements.push(...getListOfElements(base.left));
         elements.push(base.val);
+        
+        if(base.right)
         elements.push(...getListOfElements(base.right));
 
         return elements;
