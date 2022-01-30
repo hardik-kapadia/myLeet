@@ -1,8 +1,10 @@
 class Solution {
     public void rotate(int[] nums, int k) {
+        
         int l = nums.length;
 
-        k = k >= l ? k % l : k;
+        if( k >= l)
+            k = k % l;
 
         if (k == 0)
             return;
