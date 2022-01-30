@@ -8,8 +8,6 @@ class Solution {
 
         Queue<Integer> q = new ArrayDeque<>();
 
-        boolean[] added = new boolean[l];
-
         int i;
 
         for (i = 0; i < k; i++) {
@@ -17,7 +15,7 @@ class Solution {
             nums[i] = nums[l - k + i];
         }
 
-        for (; i < added.length; i++) {
+        for (; i < nums.length; i++) {
             q.add(nums[i]);
             nums[i] = q.poll();
         }
