@@ -1,24 +1,39 @@
 class MyCalendar {
 
-    List<int[]> booked;
+    Map<Integer, Integer> booked;
+    List<Integer> keySet;
 
     public MyCalendar() {
 
-        this.booked = new ArrayList<>();
+        this.booked = new HashMap<>();
+        this.keySet = new ArrayList<>();
 
     }
 
     public boolean book(int start, int end) {
 
-        for (int[] is : booked)
-            if (is[0] < end && is[1] > start)
+        int j = this.keySet.size();
+
+        for (int i = 0; i < this.keySet.size(); i++) {
+
+            int k = this.keySet.get(i);
+
+            if (k > start)
+                j = i;
+
+            if (k >= end)
+                break;
+
+            if (this.booked.get(k) > start)
                 return false;
 
-        booked.add(new int[] { start, end });
-
-        // booked.sort((p, q) -> p[0] - q[0] != 0 ? p[0] - q[0] : p[1] - q[1]);
+        }
+        
+        this.keySet.add(j, start);
+        this.booked.put(start, end);
 
         return true;
+
     }
 }
 
