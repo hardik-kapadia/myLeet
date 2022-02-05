@@ -1,7 +1,7 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
     List<String> answer = new ArrayList<>();
-    findAll("", 0, 0, answer, n);
+    findAll("(", 1, 0, answer, n);
     return answer;
 }
 
