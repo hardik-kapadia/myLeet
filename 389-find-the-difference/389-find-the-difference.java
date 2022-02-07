@@ -7,15 +7,13 @@ class Solution {
         char[] sc = s.toCharArray();
         char[] tc = t.toCharArray();
         
-        Arrays.sort(sc);
-        Arrays.sort(tc);
+        int sum =0;
         
         for(int i=0;i<sc.length;i++)
-            if(sc[i] != tc[i])
-                return tc[i];
+                sum+=tc[i] - sc[i];
         
         
-        return tc[tc.length-1];
+        return (char) (sum + tc[tc.length-1]);
         
     }
 }
