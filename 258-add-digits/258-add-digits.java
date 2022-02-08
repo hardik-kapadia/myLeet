@@ -4,24 +4,14 @@ class Solution {
         if(num < 10)
             return num;
         
-        char[] chars = String.valueOf(num).toCharArray();
+        int sum = 0;
         
-        
-        while(true){
-            
-            chars = String.valueOf(num).toCharArray();
-            
-            int sum = 0;
-        
-            for(char ch: chars)
-                sum += (ch - 48);
-        
-            if(sum < 10)
-                return sum;
-            
-            num = sum;
-        
-        
-            }   
+        while(num > 0){
+            sum += num %10;
+            num /= 10;
         }
+        
+        return addDigits(sum);
+        
+    }
 }
