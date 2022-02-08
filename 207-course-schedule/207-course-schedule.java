@@ -39,8 +39,10 @@ class Solution {
         Set<Integer> preqs = map.get(course);
 
         for (Integer integer : preqs)
-            if (cannot.contains(integer))
+            if (cannot.contains(integer)){
+                can.put(course,false);
                 return false;
+            }
 
         cannot.add(course);
 
