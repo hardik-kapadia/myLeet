@@ -17,14 +17,12 @@ class Solution {
             int lb = i+1;
             int ub = nums.length-1;
             
-            boolean found = false;
-            
             while(ub >= lb){
                 
                 int mid = (lb + ub)/2;
                 
                 if(nums[mid] == target){
-                    found = true;
+                    set.add(nums[i]);
                     break;
                 } else if (nums[mid] > target)
                     ub = mid-1;
@@ -32,9 +30,6 @@ class Solution {
                     lb = mid+1;
                 
             }
-            
-            if(found)
-                set.add(nums[i]);
             
             
         }
