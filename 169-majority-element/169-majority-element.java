@@ -1,20 +1,23 @@
 class Solution {
     public int majorityElement(int[] nums) {
         
-        Map<Integer,Integer> count = new HashMap<>();
+        // System.out.println("--------------");
         
-        int target = nums.length/2;
         
-        for(int i=0;i<nums.length;i++){
+        Arrays.sort(nums);
+        
+        for(int i=0;i<nums.length;){
             
             int val = nums[i];
+            int j = i;
+            while(i < nums.length && nums[i] == val) i++;
             
-            int c = count.getOrDefault(val,0) + 1;
+            int count = i - j;
             
-            if(c > target)
+            // System.out.println("Count for "+val+": "+count);
+            
+            if(count > nums.length/2)
                 return val;
-            
-            count.put(val,c);
             
             
         }
