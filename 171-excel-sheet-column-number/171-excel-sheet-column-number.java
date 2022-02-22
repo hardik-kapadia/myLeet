@@ -3,11 +3,11 @@ class Solution {
         
         int sum = 0;
         
-        for(int i = 0;i<columnTitle.length();i++){
+        char[] ch = columnTitle.toCharArray();
+        
+        for(int i = 0;i<ch.length;i++){
             
-            int c = columnTitle.charAt(i) - 'A' + 1;
-            
-            sum = sum * 26 + c;
+            sum = sum * 26 + ch[i] - 'A' + 1;
             
             
         }
