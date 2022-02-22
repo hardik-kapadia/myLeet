@@ -5,12 +5,8 @@ class Solution {
         
         char[] ch = columnTitle.toCharArray();
         
-        for(int i = 0;i<ch.length;i++){
-            
-            sum = sum * 26 + ch[i] - 'A' + 1;
-            
-            
-        }
+        for(int i = 0;i<ch.length;i++)
+            sum = sum * 26 + ch[i] - 64;
         
         return sum;
         
