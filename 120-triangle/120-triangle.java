@@ -11,9 +11,6 @@ class Solution {
         dp.add(new ArrayList<>(triangle.get(l-1)));
         
         
-        System.out.println(dp);
-        
-        
         for(int i = l-2;i>=0;i--){
             
             List<Integer> temp = dp.get(i);
@@ -25,7 +22,7 @@ class Solution {
             
         }
         
-        System.out.println(dp);
+        // System.out.println(dp);
         
         return dp.get(0).get(0);
         
