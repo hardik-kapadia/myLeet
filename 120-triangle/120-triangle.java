@@ -20,7 +20,7 @@ class Solution {
             List<Integer> temper = dp.get(i+1);
             
             for(int j = 0;j<=i;j++)
-                temp.add(j,triangle.get(i).get(j) + Math.min(temper.get(j),temper.get(j+1)));
+                temp.add(triangle.get(i).get(j) + Math.min(temper.get(j),temper.get(j+1)));
                 
             
         }
