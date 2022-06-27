@@ -30,12 +30,9 @@ class Solution {
         while(!stack.isEmpty()){
             
             Node temp = stack.pop();
-            
             ans.add(temp.val);
             
-            
             if(temp.children != null){
-                
                 List<Node> temper = temp.children;
                 Collections.reverse(temper);
                 stack.addAll(temper);
