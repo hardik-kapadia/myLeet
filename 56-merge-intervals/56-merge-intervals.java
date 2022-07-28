@@ -21,7 +21,8 @@ class Solution {
                     merged[j][1] = Math.max(merged[j][1],e);
                     fit=true;
                     break;
-                }
+                } else if(merged[j][0] >= e)
+                    break;
                 
             }
             
